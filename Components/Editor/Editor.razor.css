@@ -1,0 +1,16 @@
+.editor__columns {
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.editor__title {
+    font-size: 2.225rem;
+}
+
+.editor__divider {
+    width: 1px;
+    height: auto;
+
+    background-color: #999999;
+}

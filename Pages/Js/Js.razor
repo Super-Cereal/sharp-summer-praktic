@@ -1,0 +1,22 @@
+@page "/js"
+
+
+<HtmlEditor.Components.Editor.Editor
+    title="Js редактор"
+    editorValue="@Code?.Js"
+    onEditorChange="@HandleJsChange"
+    Code="@Code"
+/>
+
+
+@code {
+    [CascadingParameter(Name="Code")]
+    public Code? Code { get; set; }
+
+    public void HandleJsChange(ChangeEventArgs e)
+    {
+        if (Code?.Js != null) {
+            Code.Js = e.Value?.ToString() ?? "";
+        }
+    }
+}

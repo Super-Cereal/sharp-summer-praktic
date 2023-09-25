@@ -1,0 +1,21 @@
+﻿@inherits LayoutComponentBase
+
+
+<PageTitle>HtmlEditor</PageTitle>
+
+<CascadingValue Name="Code" Value="@_code">
+    <div class="page">
+        <div class="sidebar">
+            <NavMenu />
+        </div>
+
+        <main class="page__content">
+            @Body
+        </main>
+    </div>
+</CascadingValue>
+
+
+@code {
+    public Code _code = new Code();
+}

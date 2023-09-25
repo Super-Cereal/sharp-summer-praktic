@@ -1,0 +1,27 @@
+<div class="preview @(fullPreview ? "preview_full" : "")">
+    <h2 class="preview__title">Предпросмотр @(fullPreview ? "" : "800px")</h2>
+
+    <iframe
+        width="800"
+        class="preview__markup"
+        sandbox="allow-scripts"
+        srcdoc="<!DOCTYPE html>
+                <html>
+                    <head>
+                        <meta charset='utf-8'>
+                        <style>@Code?.Css</style>
+                    </head>
+                    <body>@Code?.Html</body>
+                    <script>@Code?.Js</script>
+                </html>"
+    />
+</div>
+
+
+@code {
+    [Parameter]
+    public bool fullPreview { get; set; } = false;
+
+    [Parameter]
+    public Code? Code { get; set; }
+}

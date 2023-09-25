@@ -1,0 +1,10 @@
+@page "/preview"
+
+
+<HtmlEditor.Components.Preview.Preview fullPreview="true" Code="@Code" />
+
+
+@code {
+    [CascadingParameter(Name="Code")]
+    public Code? Code { get; set; }
+}

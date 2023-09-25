@@ -1,0 +1,18 @@
+.preview__title {
+    font-size: 1.5rem;
+}
+
+.preview__markup {
+    width: 800px;
+    min-height: 400px;
+
+    /* overflow: scroll; */
+
+    border: 2px solid #999;
+    border-radius: 5px;
+}
+
+.preview_full .preview__markup {
+    width: 100%;
+    min-height: 800px;
+}

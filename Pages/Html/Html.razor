@@ -1,0 +1,22 @@
+﻿@page "/html"
+
+
+<HtmlEditor.Components.Editor.Editor
+    title="HTML редактор"
+    editorValue="@Code?.Html"
+    onEditorChange="@HandleHtmlChange"
+    Code="@Code"
+/>
+
+
+@code {
+    [CascadingParameter(Name="Code")]
+    public Code? Code { get; set; }
+
+    public void HandleHtmlChange(ChangeEventArgs e)
+    {
+        if (Code?.Html != null) {
+            Code.Html = e.Value?.ToString() ?? "";
+        }
+    }
+}

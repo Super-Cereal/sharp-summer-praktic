@@ -1,0 +1,36 @@
+@inject IJSRuntime JsRuntime
+
+
+<div class="download-button__wrapper">   
+    <button class="download-button" @onclick="@handleDownloadHtmlFile">
+        <svg class="download-button__icon" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24">
+            <path d="M3,12.3v7a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2v-7" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <polyline data-name="Right" fill="none" id="Right-2" points="7.9 12.3 12 16.3 16.1 12.3" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <line fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="12" y1="2.7" y2="14.2"/>
+        </svg>
+
+        <span class="download-button__text">Download compiled file</span>
+    </button>
+</div>
+
+
+@code {
+    [CascadingParameter(Name="Code")]
+    public Code? Code { get; set; }
+
+    @* загружает собранный html файл *@
+    private async Task handleDownloadHtmlFile() {
+        string html = $@"
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <style>{Code?.Css}</style>
+    </head>
+    <body>{Code?.Html}</body>
+    <script>{Code?.Js}</script>
+</html>";
+
+        await JsRuntime.InvokeVoidAsync("downloadHtmlFile", "index.html", html);
+    }
+}

@@ -1,0 +1,22 @@
+﻿@page "/css"
+
+
+<HtmlEditor.Components.Editor.Editor
+    title="Css редактор"
+    editorValue="@Code?.Css"
+    onEditorChange="@HandleCssChange"
+    Code="@Code"
+/>
+
+
+@code {
+    [CascadingParameter(Name="Code")]
+    public Code? Code { get; set; }
+
+    public void HandleCssChange(ChangeEventArgs e)
+    {
+        if (Code?.Css != null) {
+            Code.Css = e.Value?.ToString() ?? "";
+        }
+    }
+}

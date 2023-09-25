@@ -1,0 +1,25 @@
+<div class="editor">
+    <h1 class="editor__title">@title</h1>
+    <div class="editor__columns">
+        <HtmlEditor.Components.Textarea.Textarea value="@editorValue" onChange="@onEditorChange" />
+
+        <div class="editor__divider"></div>
+
+        <HtmlEditor.Components.Preview.Preview Code="@Code" />
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public string? title { get; set; }
+
+    [Parameter]
+    public string? editorValue { get; set; }
+
+    [Parameter]
+    public EventCallback<ChangeEventArgs> onEditorChange { get; set; }
+
+    [Parameter]
+    public Code? Code { get; set; }
+}

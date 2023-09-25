@@ -1,0 +1,18 @@
+.preview__title[b-y6n96o9xmm] {
+    font-size: 1.5rem;
+}
+
+.preview__markup[b-y6n96o9xmm] {
+    width: 800px;
+    min-height: 400px;
+
+    /* overflow: scroll; */
+
+    border: 2px solid #999;
+    border-radius: 5px;
+}
+
+.preview_full .preview__markup[b-y6n96o9xmm] {
+    width: 100%;
+    min-height: 800px;
+}

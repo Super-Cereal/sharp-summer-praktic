@@ -1,0 +1,16 @@
+.editor__columns[b-r9vy22yi4f] {
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.editor__title[b-r9vy22yi4f] {
+    font-size: 2.225rem;
+}
+
+.editor__divider[b-r9vy22yi4f] {
+    width: 1px;
+    height: auto;
+
+    background-color: #999999;
+}

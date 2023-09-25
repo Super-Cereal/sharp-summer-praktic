@@ -1,0 +1,12 @@
+<div class="textarea">
+    <h2 class="textarea__title">Редактор</h2>
+    <textarea class="textarea__editor" type="text" value="@value" @oninput="@onChange" />
+</div>
+
+@code {
+    [Parameter]
+    public string? value { get; set; }
+
+    [Parameter]
+    public EventCallback<ChangeEventArgs> onChange { get; set; }
+}
